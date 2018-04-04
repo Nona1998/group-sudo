@@ -42,10 +42,7 @@ int main () {
         for (int n = h; n >= i; n--) {
             std::cout <<" ";
         }
-        for (int m = 1; m <= i; m++) {
-            std::cout <<"^";
-        }
-        for (int e = 2; e <= i; e++) {
+        for (int m = 2; m <= 2*i; m++) {
             std::cout <<"^";
         }
         for (int f = h; f >= i; f--) {
@@ -55,7 +52,6 @@ int main () {
     }*/
     //tree down
     for (int i = 1; i <= h; i++) {
-        
         for (int f = 1; f <= i; f++) {
             std::cout <<" ";
         }
@@ -72,4 +68,3 @@ int main () {
     }
     return 0;
 }
-

@@ -4,4 +4,5 @@ struct person {
     int age;
     bool student;
     std::string gender;
+    std::string status;
 };

@@ -28,7 +28,7 @@ int main () {
     std::cout << "You want to know about: ";
     std::string name;
     std::cin >> name;
-    bool x = false, str = false;
+    bool x = false;
     for (int i = 0; i <= 12; i++) {
         if (name == group[i].first_name) {
             std::cout << group[i].first_name << " " << group[i].last_name << " is " << group[i].age << " years old. ";

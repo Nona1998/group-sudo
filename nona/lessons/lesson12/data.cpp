@@ -11,11 +11,11 @@ int main () {
     group[4] = {"Mariam", "Karapetyan", 21, true, "female", "isn't married"};
     group[5] = {"Ani", "Hakobyan", 19, true, "female", "isn't married"};
     group[6] = {"Aleksandr", "Avagyan", 20, true, "male", "isn't married"};
-    group[7] = {"Tigran", "Hovhannisyan", 22, true, "male", "isn't married"};
+    group[7] = {"Tigran", "Hovhannisyan", 20, true, "male", "isn't married"};
     group[8] = {"Edgar", "Grigoryan", 16, false, "male", "isn't married"};
-    group[9] = {"Hrach", "Gevorgyan", 22, true, "male", "isn't married"};
+    group[9] = {"Hrach", "Gevorgyan", 21, true, "male", "isn't married"};
     group[10] = {"Armen", "Abrahamyan", 19, true, "male", "isn't married"};
-    group[11] = {"Artur", "Gasparyan", 23, false, "male", "isn't married"};
+    group[11] = {"Artur", "Gasparyan", 25, false, "male", "isn't married"};
     group[12] = {"Michael", "Sargsyan", 17, true, "male", "isn't married"};
     std::cout << "Hello and Welcome to the ITC-2.\nHere is the members of the ITC-2.\n";
     for (int i = 0; i <= 12; i++) {
@@ -28,20 +28,18 @@ int main () {
     std::cout << "You want to know about: ";
     std::string name;
     std::cin >> name;
-    bool x = false;
+    bool x = false, str = false;
     for (int i = 0; i <= 12; i++) {
-        if (group[i].first_name == name) {
+        if (name == group[i].first_name) {
             std::cout << group[i].first_name << " " << group[i].last_name << " is " << group[i].age << " years old. ";
             if (group[i].gender == "female") {
                 std::cout << "She";
             } else {
                 std::cout << "He";
             }
-            std::cout << " is " << group[i].gender << ". " << group[i].first_name;
-            if (group[i].student) {
-                std::cout << " is ";
-            } else {
-                std::cout << " is not ";
+            std::cout << " is " << group[i].gender << ". " << group[i].first_name << " is ";
+            if (!group[i].student) {
+                std::cout << "not ";
             }
             std::cout << "student. ";
             if (group[i].gender == "female") {

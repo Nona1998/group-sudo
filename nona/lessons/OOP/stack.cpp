@@ -4,17 +4,15 @@ class Stack {
     private:
         unsigned int top = 0;
         int n;
-        int arr[];
+        int arr[10];
     public:
         Stack (int top = 0, int n = 0)
         {
             (*this).n = n;
-            (*this).arr[10] = arr[10];
         }
         void push (int element) {
             if (top < 10) {
-                arr[top] = element;
-                top ++;
+                arr[top++] = element;
             } else {
                 std::cout << "Error: Stack is full." << std::endl;
             }
@@ -26,7 +24,7 @@ class Stack {
             } else if (top == 0){
                 std::cout << "Error: Stack is empty." << std::endl;
             }
-            return top;
+            return arr[top];
         }
         int size () {
             return top;

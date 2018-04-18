@@ -26,10 +26,8 @@ int main () {
     std::cout << "The area of the circle is: " << C.getS() << std::endl;
     std::cout << "The length of the line: " << L.getLength() << std::endl;
     std::cout << "All the points in the line: " << std::endl;
+    L.printXY();
     float k = y / x;
-    for (int i = x + 1; i < xx; i++) {
-        std::cout << "(" << i << ", " << k * i << ")" << std::endl;
-    }
     //Rectangle & Triangle
     Rectangle R(1,2,3,4);
     Triangle T(1,2,3,4,5,6);
@@ -56,5 +54,8 @@ int main () {
     std::cout << "The sides of triangle are: " << T.sideA() << ", " << T.sideB() << ", " << T.sideC() << std::endl;
     std::cout << "The perimeter of triangle is: " << T.pTriangle() << std::endl;
     std::cout << "The surface of the triangle is: " << T.sTriangle() << std::endl;
+    Point *point = &R;
+    point->boo();
+    point->foo();
     return 0;
 }

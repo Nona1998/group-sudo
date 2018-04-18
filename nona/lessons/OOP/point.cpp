@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 class Point {
     protected:
@@ -11,6 +11,11 @@ class Point {
             this->x = x;
             this->y = y;
         }
+	Point (const Point &obj) 
+	{
+	    x = obj.x;
+	    y = obj.y;
+	}
         void setX (float x) {
             this->x = x;
         }
@@ -23,6 +28,12 @@ class Point {
         float getY () {
             return y;
         }
+	void boo () {
+	    std::cout << "This is class Point! BOO" << std::endl;
+	}
+	void foo () {
+	    std::cout << "This is class Point! FOO" << std::endl;
+	}
         ~Point () {
         }
 };
@@ -36,6 +47,11 @@ class Circle: public Point {
         {
             this->r = r;
         }
+	Circle (const Circle &obj) 
+	:Point(x,y)
+	{
+	    r = obj.r;
+	}
         void setR (unsigned int r) {
             this->r = r;
         }
@@ -60,6 +76,12 @@ class Line: public Point {
             this->xx = xx;
             this->yy = yy;
         }
+	Line (const Line &obj) 
+	:Point(x,y)
+	{
+	    xx = obj.xx;
+	    yy = obj.yy;
+	}
         void setXX (float xx) {
             this->xx = xx;
         }
@@ -76,6 +98,22 @@ class Line: public Point {
             float length = sqrt(pow(getXX() - getX(), 2) + pow(getYY() - getY(), 2));
             return length;
         }
+	void printXY () {
+	    float x1 = getX(), y1 = getY();
+	    float k = (yy - y1) / (xx - x1);
+	    float b = y1 - k * x1;
+	    int i, n;
+	    if (x1 < xx) {
+		i = x1 + 1;
+		n = xx;
+	    } else {
+		i = xx + 1;
+	        n = x1;
+	    }
+	    for (i; i < n; ++i) {
+		std::cout << "(" << i << ", " << k * i + b << ")" << std::endl;
+	    }
+	}
         ~Line () {
         }
 };
@@ -91,6 +129,12 @@ class Rectangle: public Point {
             this->x1 = x1;
             this->y1 = y1;
         }
+	Rectangle (const Rectangle &obj) 
+	:Point(x,y)
+	{
+	    x1 = obj.x1;
+	    y1 = obj.y1;
+	}
         void set (float x1, float y1) {
             this->x1 = x1;
             this->y1 = y1;
@@ -102,10 +146,10 @@ class Rectangle: public Point {
             return y1;
         }
         float sideA () {
-            return getY1() - getY();
+            return std::abs(getY1() - getY());
         }
         float sideB () {
-            return getX1() - getX();
+            return std::abs(getX1() - getX());
         }
         float pRectangle () {
             return 2 * (sideA() + sideB());
@@ -133,10 +177,14 @@ class Triangle: public Point {
             this->x4 = x4;
             this->y4 = y4;
         }
-        Triangle (const Triangle &x3)
-        {
-            std::cout << "This is copy constructer!" << std::endl;
-        }
+	Triangle (const Triangle &obj) 
+	:Point(x,y)
+	{
+	    x3 = obj.x3;
+	    y3 = obj.y3;
+	    x4 = obj.x4;
+	    y4 = obj.y4;
+	}
         void set (float x3,float y3, float x4, float y4) {
             this->x3 = x3;
             this->y3 = y3;
@@ -170,6 +218,12 @@ class Triangle: public Point {
         float sTriangle () {
             return sqrt(pTriangle() * (pTriangle() - sideA()) * (pTriangle() - sideB()) * (pTriangle() - sideC()));
         }
+	void boo () {
+	    std::cout << "This is class Triangle! BOO" << std::endl;
+	}
+	void foo () {
+	    std::cout << "This is class Triangle! FOO" << std::endl;
+	}
         ~Triangle ()
         {
         }

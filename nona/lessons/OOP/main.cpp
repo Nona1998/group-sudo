@@ -1,5 +1,5 @@
 #include <iostream>
-#include "class.cpp"
+#include "point.cpp"
 
 int main () {
     //Circle & Line

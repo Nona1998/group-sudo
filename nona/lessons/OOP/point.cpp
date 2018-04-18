@@ -23,12 +23,6 @@ class Point {
         float getY () {
             return y;
         }
-        void printX (float x) {
-            std::cout << x;
-        }
-        void printY (float y) {
-            std::cout << y;
-        }
         ~Point () {
         }
 };

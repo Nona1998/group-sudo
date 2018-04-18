@@ -1,5 +1,5 @@
 #include <iostream>
-#include "point.cpp"
+#include "class.cpp"
 
 int main () {
     //Circle & Line
@@ -28,11 +28,7 @@ int main () {
     std::cout << "All the points in the line: " << std::endl;
     float k = y / x;
     for (int i = x + 1; i < xx; i++) {
-        std::cout << "(";
-        L.printX(i);
-        std::cout << ", ";
-        L.printY(k * i);
-        std::cout << ") \n";
+        std::cout << "(" << i << ", " << k * i << ")" << std::endl;
     }
     //Rectangle & Triangle
     Rectangle R(1,2,3,4);

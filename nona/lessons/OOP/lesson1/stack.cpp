@@ -6,8 +6,9 @@ class Stack {
         unsigned int n;
         int *arr;
     public:
-        Stack (int n,int top = 0)
+        Stack (unsigned int n)
         {
+            top = -1;
             (*this).n = n;
             arr = new int [n];
         }
@@ -27,26 +28,21 @@ class Stack {
             return n;
         }
         void push (int element) {
-            if (top < n) {
+            if (top != n - 1) {
                 arr[++top] = element;
-            }
-            if (top == n) {
+            } else {
                 std::cout << "Error: Stack is full." << std::endl;
             }
         }
         int pop () {
-            if (top != 0)  {
-                arr[--top] = 0;
-                return arr[top];
+            if (top != -1) {
+                return arr[top--];
             }
-            if (top == 0) {
-                std::cout << "\nError:Stack is empty" << std::endl;
-            }
+            std::cout << "\nError:Stack is empty" << std::endl;
+            return -1;
         }
         bool isEmpty () {
-            if (top == 0) {
-                return true;
-            }
+                return (top == -1);
         }
 };
 
@@ -57,17 +53,13 @@ int main () {
     Stack a(size);
     std::cout << "Add elements to the stack: "<< std::endl;
     int elements;
-    while (a.size() != 0) {
+    while (a.size() != size - 1) {
         std::cin >> elements;
         a.push(elements);
     }
-    while (a.size() >= 0) {
+    while (a.size() != -1) {
         std::cout << a.pop();
-        if (a.size() == 0) {
-            a.pop();
-            break;
-        }
     }
-    std::cout << "The number of elements in stack: " << a.size() << std::endl;
+    std::cout << std::endl;
     return 0;
 }

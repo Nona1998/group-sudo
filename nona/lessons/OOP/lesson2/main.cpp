@@ -1,6 +1,14 @@
 #include <iostream>
 #include "classes.cpp"
 
+void printS(Shape* obj) {
+    std::cout << obj->getS() << std::endl;
+}
+
+void printP(Shape* obj) {
+    std::cout << obj->getP() << std::endl;
+}
+
 int main () {
     //Circle & Line
     float x,y,xx,yy;
@@ -20,7 +28,8 @@ int main () {
     std::cout << "Enter the radius of the circle: ";
     std::cin >> r;
     Circle c(r);
-    std::cout << "The surface of the circle is: " << c.getS() << std::endl;
+    std::cout << "The surface of the circle is: " << c.getCircleS() << std::endl;
+    std::cout << "The length of the circle is: " << c.getC() << std::endl;
     std::cout << "The length of the line: " << l.getLength() << std::endl;
     std::cout << "All the points in the line: " << std::endl;
     l.printXY();
@@ -55,5 +64,18 @@ int main () {
     Point *point = &t;
     point->boo();
     point->foo();
+    std::cout << l.shape() << std::endl;
+    std::cout << c.shape() << std::endl;
+    Circle objCircle;
+    printS (&objCircle);
+    printP (&objCircle);
+    std::cout << rec.shape() << std::endl;
+    Rectangle objRectangle;
+    printS (&objRectangle);
+    printP (&objRectangle);
+    std::cout << t.shape() << std::endl;
+    Triangle objTriangle;
+    printS (&objTriangle);
+    printP (&objTriangle);
     return 0;
 }

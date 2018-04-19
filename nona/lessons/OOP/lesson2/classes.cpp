@@ -1,7 +1,14 @@
 #include <iostream>
 #include <cmath>
 
-class Point {
+class Shape {
+    public:
+        virtual std::string shape() = 0;
+        virtual float getS() = 0;
+        virtual float getP() = 0;
+};
+
+class Point: public Shape {
     protected:
         float x;
         float y;
@@ -32,8 +39,17 @@ class Point {
         void boo () {
             std::cout << "This is class Point! BOO" << std::endl;
         }
-        void virtual foo () {
+        virtual void foo () {
             std::cout << "This is class Point! FOO" << std::endl;
+        }
+        std::string shape () {
+            return "I am Point!";
+        }
+        virtual float getS() {
+            return getX();
+        }
+        virtual float getP() {
+            return getY();
         }
 };
 
@@ -58,8 +74,20 @@ class Circle: public Point {
         int getR () {
             return r;
         }
-        float getS () {
+        float getC () {
+            return 2 * getR() * M_PI;
+        }
+        float getCircleS () {
             return getR() * getR() * M_PI;
+        }
+        std::string shape () {
+            return "I am Circle!";
+        }
+        virtual float getS () {
+            return getCircleS();
+        }
+        virtual float getP () {
+            return getC();
         }
 };
 
@@ -104,6 +132,12 @@ class Line: public Point {
                 std::cout << "(" << i << ", " << k * i + b << ")" << std::endl;
             }
         }
+        std::string shape () {
+            return "I am Line!";
+        }
+        virtual float getP () {
+            return getLength();
+        }
 };
 
 class Rectangle: public Point {
@@ -138,6 +172,15 @@ class Rectangle: public Point {
         }
         float sRectangle () {
             return sideA() * sideB();
+        }
+        std::string shape () {
+            return "I am Rectangle!";
+        }
+        virtual float getS () {
+            return sRectangle();
+        }
+        virtual float getP () {
+            return pRectangle();
         }
 };
 
@@ -193,5 +236,14 @@ class Triangle: public Point {
         }
         void foo () {
             std::cout << "This is class Triangle! FOO" << std::endl;
+        }
+        std::string shape () {
+            return "I am Triangle!";
+        }
+        virtual float getS () {
+            return  sTriangle();
+        }
+        virtual float getP () {
+            return  pTriangle();
         }
 };

@@ -6,7 +6,7 @@ class Stack {
         unsigned int n;
         int *arr;
     public:
-        Stack (unsigned int n)
+        Stack (unsigned int n = 10)
         {
             top = -1;
             (*this).n = n;

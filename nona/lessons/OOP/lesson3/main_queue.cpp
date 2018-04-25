@@ -2,18 +2,13 @@
 #include "queue.hpp"
 
 int main () {
-    int length;
-    std::cout << "Length: ";
-    std::cin >> length;
-    Queue queue(length);
-    int element;
-    std::cout << "Add elements to the queue: " << std::endl;
-    for (int i = 0; i < length; ++i) {
-        std::cin >> element;
-        queue.enqueue(element);
-    }
-    for (int i = 0; i < length; ++i) {
-        std::cout << queue.dequeue() << std::endl;
-    }
+    Queue q(5);
+    q.enqueue(103);
+    q.enqueue(14);
+    std::cout << "Length-> " << q.length() << std::endl;
+    q.dequeue();
+    q.enqueue(25);
+    q.print();
+    std::cout << "Length-> " << q.length() << std::endl;
     return 0;
 }

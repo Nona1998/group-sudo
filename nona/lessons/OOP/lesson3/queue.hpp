@@ -4,6 +4,7 @@ class Queue {
     private:
         int *_arr;
         unsigned int _length;
+        unsigned int _size;
         int _head;
         int _tail;
     public:
@@ -14,5 +15,7 @@ class Queue {
         void enqueue(int element);
         int dequeue();
         bool isEmpty();
+        bool isFull();
+        void print();
 };
 #endif

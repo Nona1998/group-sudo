@@ -1,25 +1,24 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include "prototypes_vector.hpp"
 
 int main () {
-    srand(time(0));
-    unsigned int length;
-    std::cout << "Length:";
-    std::cin >> length;
-    Vector vector(length);
-    std::cout << "Adding elements in the array: " << std::endl;
-    for (int i = 0; i < length; i++) {
-        std::cout << i << ".  " << vector.insert(i, rand() % 9 + 1) << std::endl;
-    }
-    std::cout << "Find element: ";
+    std::cout << "=============================" << std::endl;
+    Vector v(6);
+    v.insert(0,10);
+    v.insert(1,2);
+    v.insert(2,6);
+    v.insert(3,9);
+    v.insert(4,25);
+    v.insert(5,33);
+    std::cout << "=================================="<< std::endl;
+    v.insert(2,24);
+    std::cout << "Enter an integer to find it in tha array: ";
     int num;
     std::cin >> num;
-    if (vector.find(num) == -1) {
-        std::cout << "The array doesn't contain that element." << std::endl;
+    if (v.find(num) != -1) {
+        std::cout << num << " is the " << v.find(num) << "th element in the array." << std::endl;
     } else {
-        std::cout << num << "is the " << vector.find(num) << "th element in the array." << std::endl;
+        std::cout << "The array doesn't contain that element." << std::endl;
     }
     return 0;
 }

@@ -1,0 +1,103 @@
+1.Find a text in the files
+--------------------------
+grep Hello *.txt -r dir | sort > filename.txt
+
+2.Create 3 users 3 groups
+-------------------------
+sudo adduser user1
+sudo adduser user2
+sudo adduser user3
+sudo addgroup group1
+sudo addgroup group2
+sudo addgroup group3
+sudo usermod -a -G group1 user1
+sudo usermod -a -G group1 user2
+sudo usermod -a -G group2 user2
+sudo usermod -a -G group2 user3
+sudo usermod -a -G group3 user1
+sudo usermod -a -G group3 user2
+sudo usermod -a -G group3 user3
+mkdir dir1 dir2
+sudo chown user1:group1 dir1
+sudo chown user2:group2 dir1
+sudo setfacl -m u:user1:rwx dir1
+sudo setfacl -m u:user2:r-x dir1
+sudo setfacl -m u:user3:r-- dir1
+sudo setfacl -m u:user1:--x dir2
+sudo setfacl -m u:user2:rwx dir2
+sudo setfacl -m u:user3:r-x dir2
+
+3.Create a swap partition
+-------------------------
+touch swapfile
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon -s
+sudo vim /etc/fstab
+    /swapfile none swap sw 0 0
+sudo swapoff /swapfile
+
+4.Boot Access
+-------------
+vim /var/tmp/test_script.sh
+    !/bin/bash
+    echo "Test auto run during boot" > /var/tmp/script.out
+    echo "The time the script run was -->  `date`" >> /var/tmp/script.out
+cd etc/systemd/system/
+touch sample.service
+sudo chmod 777 sample.service
+vim sample.service
+    [Unit]
+    Description=Description for sample script goes here
+    After=network.target
+
+    [Service]
+    Type=simple
+    ExecStart=/var/tmp/test_script.sh
+    TimeoutStartSec=0
+
+    [Install]
+    WantedBy=default.target
+systemctl daemon-reload
+systemctl enable sample.service
+systemctl enable sample.service
+systemctl reboot
+
+5.Runlevels
+----------
+who -r
+sudo vim /etc/default/grub
+    change 
+        GRUB_CMDLINE_LINUX=""
+    to
+        GRUB_CMDLINE_LINUX="1"
+sudo update-grub
+init 6      
+
+6.Fint .txt and .odf files
+--------------------------
+find /home/nona/Desktop/dir/ -type f -regex ".*\.\(txt\|odf\)"
+
+7.Create ext2 partition and change type to ext3
+-----------------------------------------------
+sudo apt-get install gparted
+sudo gparted
+    partition -> new -> ext2
+sudo vim /etc/fstab
+    /dev/sda7      /      ext3        defaults       1     2 
+
+8.PATH
+------
+touch /workspace/test.sh
+vim /workspace/test.sh
+    #!/bin/bash
+    echo "Hello World"
+echo $PATH
+vim ~/.bashrc
+    PATH=$PATH:/workspace
+    export PATH
+source ~/.bashrc
+test.sh
+(The output will be --->  Hello World)

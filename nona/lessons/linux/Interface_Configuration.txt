@@ -10,14 +10,14 @@
 4. Follow the nic configuration in the book to change your ip address from dhcp client  to fixed. Keep the same ip address  to avoid conflicts!
 	sudo ifdown lo	
 	sudo vim /etc/network/interfaces
-		address 127.0.0.1
+		address 192.168.0.100
 	sudo ifup lo
 
 6. Verify that you have a gateway.
 	route -n
 
 7. Verify that you can connect to the gateway, that it is alive.
-	ping -c2 127.0.0.1
+	ping -c2 192.168.0.100
 
 8. Change the last two digits of your mac address.
 	ifconfig

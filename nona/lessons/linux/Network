@@ -1,0 +1,45 @@
+1.Verify whether dhclient is running.
+	ps fax | grep dhclient
+
+2.Display your current ip address(es).
+	/sbin/ifconfig | grep 'inet '
+		
+3.Display the configuration file where this ip address is defined.
+	sudo vim /etc/network/interfaces
+
+4. Follow the nic configuration in the book to change your ip address from dhcp client  to fixed. Keep the same ip address  to avoid conflicts!
+	sudo ifdown lo	
+	sudo vim /etc/network/interfaces
+		address 127.0.0.1
+	sudo ifup lo
+
+6. Verify that you have a gateway.
+	route -n
+
+7. Verify that you can connect to the gateway, that it is alive.
+	ping -c2 127.0.0.1
+
+8. Change the last two digits of your mac address.
+	ifconfig
+	sudo ifconfig enp0s7 hw ether 50:e5:49:94:40:b4
+
+9. Which ports are used by http, pop3, ssh, telnet, nntp and ftp ?
+	grep ^'http' /etc/services 
+	grep ^'https' /etc/services 
+ 	grep ^'pop3' /etc/services 
+	grep ^'ssh' /etc/services 
+	grep ^'telnet' /etc/services 
+	grep ^'nntp' /etc/services 
+	grep ^'ftp' /etc/services 
+
+10. Explain why e-mail and websites are sent over tcp  and not udp.
+	Because tcp is reliable and udp is not.
+
+11. Display the hostname  of your computer.
+	hostname
+
+12. Which ip-addresses did your computer recently have contact with ?
+	arp -a
+	
+		
+

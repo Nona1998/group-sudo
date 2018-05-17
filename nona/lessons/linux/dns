@@ -1,0 +1,7 @@
+1. Install bind9 and verify with a sniffer how it works.
+	sudo apt-get install bind9 
+4. Use dig and nslookup to verify your NS and A records.
+	nslookup
+	    > youtube.com
+	    address: 216.58.212.46
+	dig

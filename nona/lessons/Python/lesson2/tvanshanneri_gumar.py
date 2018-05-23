@@ -8,4 +8,4 @@ def sum_foo(a):
         summa += int(a[i])
         i += 1
     return summa
-print ('The sum of numbers of', a, ': ', sum_foo(a))
+print ('The sum of numbers of', a, ':', sum_foo(a))

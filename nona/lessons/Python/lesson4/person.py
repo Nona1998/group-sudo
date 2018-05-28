@@ -10,10 +10,6 @@ class Person(object):
 class Employee(Person):
     def __init__(self,first,last,age,staffnum):
         Person.__init__(self,first,last,age)
-        self.first = first
-        self.first = first
-        self.last = last
-        self.age = age
         self.staffnum = staffnum
     def __str__(self):
         return "First name: "+str(self.first)+"\nLast name: "+str(self.last)+"\nAge: "+str(self.age)+"\nStaff: "+str(self.staffnum)

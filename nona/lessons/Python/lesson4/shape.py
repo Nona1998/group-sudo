@@ -19,9 +19,8 @@ class Rectangle(Shape):
 class Square(Rectangle):
     def __init__(self,side):
         Rectangle.__init__(self,side,side)
-        self.side = side
     def __str__(self):
-        return "This is Square. "+"The side of square is: "+str(self.side)
+        return "This is Square. "+"The side of square is: "+str(self.width)
 class Circle(Shape):
     def __init__(self,radius):
         self.radius = radius

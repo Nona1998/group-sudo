@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	font-family: 'Verdana';
+	min-width: 1200px;
+}
+
+.create-cv {
+	position:relative;
+	background-image: url(img/book-computer-design.jpg);
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.dark-block {
+	background-color: rgba(0,0,0,.6);
+	height: 100vh;
+	width: auto;
+}
+
+
+.right {
+	position: absolute;
+	top:230px;
+	right:230px;
+	width:700px;
+	text-align: left;
+	color: white;
+}
+
+.left {
+	position: absolute;
+	top:0px;
+	left:50px;
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+	width: 400px;
+}
+
+.cv {
+	position:absolute;
+	background-image: url(https://d.novoresume.com/images/doc/modern-cv-template.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 400px;
+	width: 300px;
+
+}
+
+#cv1 {
+	z-index: 1;
+	top:150px;
+	left:200px;
+}
+
+#cv2 {
+	z-index: 2;
+	top:230px;
+	left:300px;
+}
+
+#cv3 {
+	z-index: 3;
+	top:190px;
+	left:440px;
+}
+#cv4 {
+	z-index: 4;
+	top:280px;
+	left:360px;
+}
+
+.cv:hover {
+	z-index: 6 !important;
+	cursor: pointer;
+	transform: scale(1.1);
+	transition-duration: 1.1s;
+}
+
+.right p {
+	font-size: 20px;
+}
+.right button {
+	margin: 60px auto;
+	display: block;
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+	background-color: #358b5d;
+	border: 0;
+	color: #fff;
+	font-family: 'verdana';
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 600;
+	word-spacing: 3px;
+	text-align: center;
+}
+
+.right button:hover {
+	background-color:  #317e55;
+	color:  #dadada ;
+	cursor: pointer;
+}
+
+.user {
+	background-color: #d2d1d1;
+}
+
+.number {
+	display: inline-block;
+	margin: 40px 0;
+}
+
+.number:not(:last-child) {
+	margin-right: 150px;
+}
+
+.center {
+	margin-left: calc(50% - 450px);
+}
+.circle {
+	float: right;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 3px solid #317e55;
+	font-size: 65px;
+	color: #317e55;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.circle p {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p-user {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #0b4f26;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-align: center;
+}
+
+.pics img {
+	width: 150px;
+	border: 5px solid  #878585;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 30px 100px 0 100px;
+}
+
+.first-row, .second-row {
+	text-align: center;
+}
+
+.content {
+	height: 100vh;
+}

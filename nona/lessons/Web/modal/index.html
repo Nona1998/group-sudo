@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="index.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+	<div id="modal">
+		<form>
+			<div class="surname-name">
+				<div class="surname1">
+					<p>Surname</p>
+					<input type="text" id="surname" name="surname1">
+				</div>
+				<div class="name1">
+					<p>Name</p>
+					<input type="text" name="name1">
+				</div>
+			</div>
+			<div class="gender">
+				<p>Gender</p>
+				<label><input id="male" type="radio" name="gender" value="male">Male</label>
+				<label><input id="female" type="radio" name="gender" value="female">Female</label>
+			</div>
+			<div class="button-holder">
+				<span id="save-info">Save</span>
+			</div>
+		</form>
+	</div>
+	<div class="container">
+		<div class="header">
+			<div class="block">
+				<p id="greeting"></p>
+			</div> 
+		</div>
+		<div class="data">
+			<div class="form-holder">
+				<div class="info">
+					<input type="text" name="address" placeholder="Address">
+					<input type="text" name="city" placeholder="City">
+					<input type="country" name="country" placeholder="Country">
+				</div>
+				<div class="info">
+					<input type="tel" name="phone" placeholder="Phone">
+					<input type="text" name="name" placeholder="Name">
+					<input type="text" name="surname" placeholder="Surname">
+				</div>
+				<div class="button-holder">
+					<span id="save-info2">Save</span>
+				</div>
+			</div>
+			<div id="saved-forms">
+				
+			</div>
+		</div>
+		<div class="footer">
+			<p>&copy Nona Musaelian</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -9,70 +9,60 @@ body {
     height: 100vh;
 	font-family: 'Verdana';
 	background-color: #E7E7E7;
+	font-size: 20px;
 }
-
+.dropdown a {
+	display: block;
+	width: 100px;
+	background-color: rgba(0,0,0,.8);
+	text-align: center;
+	padding: 20px 5px;
+	text-decoration: none;
+	color: #fff;
+}
+.dropdown a:hover {
+	background-color: #FF6100;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
 .header {
 	width: 100vw;
 	box-sizing: border-box;
-	height: 70px;
 	background-color: rgba(0,0,0,.8);
 	text-align: right;
-	padding: 10px;
+	padding: 0 50px;
 	display: table;
 }
-
-.header ul {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.header li {
-	display: inline;
-}
-
-li:not(:last-child) {
-	margin-right: 10px;
-}
-
-.header select {
-	width: 90px;
-	height: 40px;
-	background-color: #000;
-	color: #fff;
-	font-size: 20px;
-	border: 0px;
-}
-
-.header select:hover, button:hover {
-	cursor: pointer;
-}
-
 .form-holder {
 	border: 2px solid #B55609;
-	height: auto;
-	width: 350px;
+	box-shadow: 0px 0px 25px 2px #777;
+	width: 30%;
 	padding: 15px;
-	margin: 285px auto;
+	margin: 100px auto;
 	background-color: #E79653;
 	border-radius: 10px;
 }
-form {
-	display: table-cell;
-	margin: auto;
-}
-
 input {
-	border-radius: 7px;
-	height: 25px;
-	width: calc(100% - 10px);
+	border: none;
+	border-bottom: 2px solid #8d8d8d;
+	border-radius: 5px;
+	padding: 10px 5px;
+	width: 100%;
+	box-sizing: border-box;
 	margin: auto;
 	padding-left: 5px;
-	font-size: 12px;
-	background-color: #E7E7E7;
+	font-size: 18px;
+	background-color: #FAE5D3;
 }
 
 input:focus {
-	border: 2px solid #B55609;
+	border-bottom: 2px solid #B55609;
+	background-color: #fff;
 }
 
 input:not(:last-child) {
@@ -80,31 +70,49 @@ input:not(:last-child) {
 }
 
 #checkbox {
-	text-align: left;
-	display: inline;
-	width: 15px;
+	width: 18px;
+	height: 18px;
+	margin-right: 5px;
 }
-
+.button-holder {
+	position: relative;
+}
 button {
-	float: right;
-	display: block;
-	margin-top: 15px;
-	font-size: 12px;
-	width: 40px;
-	height: 20px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	font-size: 14px;
+	width: 70px;
+	padding: 5px 0;
 	border-radius: 10px;
 	background-color: #EA6F0B;
 	color: aliceblue;
 	font-weight: 800;
 	border: 2px solid #B55609;
 }
-
+button:hover {
+	cursor: pointer;
+	background-color: #FF6100 
+}
 .footer {
 	height: auto;
 	background-color: rgba(0,0,0,.8);
-	padding: 10px;
+	padding: 20px 0;
 	color: aliceblue;
 	text-align: center;
-	font-size: 60px;
+	font-size: 25px;
 	text-transform: uppercase;
+	bottom: 0;
+	position: fixed;
+	width: 100vw;
+}
+@media only screen and (max-width: 500px) {
+	.form-holder {
+		width: 80%;
+	}
+}
+@media only screen and (max-width: 1024px) and (min-width: 501px) {
+	.form-holder {
+		width: 50%;
+	}
 }

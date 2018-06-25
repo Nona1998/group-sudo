@@ -1,29 +1,31 @@
 function init() {	
 	var saveInfo = document.getElementById('save-info');
 	var modal = document.getElementById('modal');
-	// var container = document.getElementsByClassName('container')[0];
 	var greeting = document.getElementById('greeting');
 	var gender;
 	var surname = document.getElementsByName('surname1')[0];
 	var name = document.getElementsByName('name1')[0];
+
     function windowOnClick(event) {
         if (event.target === modal) {
             modal.style.visibility = "hidden";
         }
     }
     window.addEventListener("click", windowOnClick);
+
 	saveInfo.onclick = function() {
-		modal.style.visibility = "hidden";
-		if (document.getElementById('female').checked) {
-			gender = "Mrs. ";
-		} else if (document.getElementById('male').checked) {
-			gender = "Mr. ";
+		modal.style.visibility = "hidden";		
+			if (document.getElementById('female').checked) {
+				gender = "Mrs. ";
+			} else if (document.getElementById('male').checked) {
+				gender = "Mr. ";
+			}
+			greeting.innerHTML = "Hi, " + gender + " " + name.value + " " + surname.value;
+			localStorage.setItem("name-surname", greeting.innerHTML);
 		}
-		greeting.innerHTML = "Hi, " + gender + " " + name.value + " " + surname.value;
-	}
-	var saveInfo2 = document.getElementById("save-info2");
 	var i = 0;
-	var h = 1;
+	var a = 1;
+	var saveInfo2 = document.getElementById("save-info2");
 	saveInfo2.onclick = function() {
 		var savedForms = document.getElementById("saved-forms");
 		var div = document.createElement("div");
@@ -36,7 +38,7 @@ function init() {
 		savedForms.append(div);
 		div.style.border = "2px solid #a3a3a3";
 		div.style.padding = "5px";
-		div.style.backgroundColor= "#fff";
+		div.style.backgroundColor= "#D5F5E3";
 		div.style.margin= "0 auto 15px auto";
 		div.append(p1);
 		p1.className = "name";
@@ -57,15 +59,21 @@ function init() {
 		p6.className = "address";
 		document.getElementsByClassName("address")[i].innerHTML = "Address: " + document.getElementsByName("address")[0].value;
 		i++;
-		document.getElementsByName("address")[0].value = null;
-		document.getElementsByName("city")[0].value = null;
-		document.getElementsByName("country")[0].value = null;
-		document.getElementsByName("phone")[0].value = null;
-		document.getElementsByName("surname")[0].value = null;
-		document.getElementsByName("name")[0].value = null;
-		window.localStorage.setItem("div"+h, JSON.stringify(div));
-		h++
-	 }
- 
+		var inputName = ["address","city","country","phone","surname","name"];
+		for (var j = 0; j < inputName.length; j++) {
+			document.getElementsByName(inputName[j])[0].value = "";
+		}
+		var data = document.getElementsByClassName("data")[0];	
+    	function saveData(){
+	    	localStorage.setItem("name"+a, p1.innerHTML);
+	    	localStorage.setItem("surname"+a, p2.innerHTML);
+	    	localStorage.setItem("phone"+a, p3.innerHTML);
+	    	localStorage.setItem("country"+a, p4.innerHTML);
+	    	localStorage.setItem("city"+a, p5.innerHTML);
+	    	localStorage.setItem("address"+a, p6.innerHTML);
+    	}
+    	saveData();
+    	a++
+	}
 }
 window.onload = init;

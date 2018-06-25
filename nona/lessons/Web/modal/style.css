@@ -5,7 +5,8 @@
 }
 body {
 	font-family: 'Roboto', sans-serif;
-	color: #515453;	
+	color: #212F3D;
+	background-color: #f2f3f4;
 }
 #modal {
 	position: fixed;
@@ -22,7 +23,7 @@ body {
 	z-index: 2;
 }
 #modal-content {
-	background-color: #A9E0A5;
+	background-color: #7DCEA0;
 	width: 30%;
 	padding: 20px;
 	border-radius: 5px;
@@ -95,13 +96,8 @@ body {
 	cursor: pointer;
 	background-color: #eee;
 }
-.show-modal {
-	opacity: 1;
-	transform: scale(1);
-	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
 .header {
-	background-color: #A9E0A5;
+	background-color: #27AE60;
 	color: #ffffff;
 	width: 100vw;
 	margin-bottom: 50px;
@@ -119,7 +115,7 @@ body {
 }
 .footer {
 	position: fixed;
-	background-color: #A9E0A5;
+	background-color: #27AE60;
 	padding: 20px 0;
 	text-align: center;
 	width: 100vw;
@@ -164,23 +160,25 @@ body {
 	border: 2px solid #9a9c9a;
 	padding: 20px;
 	justify-content: center;
-}/*
-@media screen and (max-width: 1024px){
-	#modal p {
-		font-size: 20px;
+	margin-bottom: 100px;
+}
+@media screen and (max-width: 500px){
+	#greeting, .footer p {
+		font-size: 14px !important;
 	}
-	.surname-name input {
-		font-size: 22px;
-		padding-left: 10px;
+	#modal-content {
+		width: 70vw;
 	}
-	.gender label{
-		font-size: 23px;
+	#modal-content p,
+	#modal-content input {
+		font-size: 12px;
 	}
-	input[type=radio] {
-		width: 1.5em;
-		height: 1.5em;
+	.data {
+		width: 100%;
+		padding: 0 10px;
 	}
-	#save-info {
-		font-size: 16px;
+	.data input {
+		width: 30%;
+		font-size: 14px;
 	}
-}*/
+}

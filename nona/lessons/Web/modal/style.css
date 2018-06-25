@@ -1,19 +1,32 @@
 * {
 	margin: 0;
 	outline: 0;
+	box-sizing: border-box;
 }
 body {
 	font-family: 'Roboto', sans-serif;
 	color: #515453;	
 }
 #modal {
-	border: 1px solid #ccc;
-	padding: 20px;
-	margin: 100px auto;
-	width: 30%;
-	border-radius: 10px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,.5);
+	transform: scale(1.2);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+#modal-content {
 	background-color: #A9E0A5;
-	box-shadow: 5px 5px 20px 0px #ccc;
+	width: 30%;
+	padding: 20px;
+	border-radius: 5px;
+	border: 5px solid  #ccc;
 }
 .surname1, .name1 {
 	width: 45%;
@@ -27,12 +40,13 @@ body {
 	margin-bottom: 20px;
 }
 .surname-name input {
-	width: calc(100% - 10px);
+	width: 100%;
 	border: 1px solid #ccc;
 	height: 30px;
 	font-size: 20px;
 	padding: 0 5px;
 	color: #515453;
+	border-radius: 5px;
 }
 .surname-name input:focus {
 	border: 1px solid #aaa;
@@ -64,7 +78,7 @@ body {
 	flex-direction: row-reverse;
 }
 #save-info, #save-info2 {
-	width: 100px;
+	width: 70px;
 	color: #515453;
 	text-transform: uppercase;
 	letter-spacing: 0.3em;
@@ -72,14 +86,19 @@ body {
 	background-color: #fff;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-	padding: 10px 0;
-	font-size: 13px;
+	padding: 7px 0;
+	font-size: 11px;
 	box-shadow: inset 1px -3px 20px 0px #ccc;
 	text-align: center;
 }
 #save-info:hover, #save-info2:hover {
 	cursor: pointer;
 	background-color: #eee;
+}
+.show-modal {
+	opacity: 1;
+	transform: scale(1);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 .header {
 	background-color: #A9E0A5;
@@ -101,13 +120,12 @@ body {
 .footer {
 	position: fixed;
 	background-color: #A9E0A5;
-	padding: 20px;
+	padding: 20px 0;
 	text-align: center;
-	width: calc(100vw - 40px);
+	width: 100vw;
 	bottom: 0;
 }
 .container {
-	display: none;
 	width: 100vw;
 }
 .data {
@@ -145,13 +163,11 @@ body {
 	flex-wrap: wrap;
 	border: 2px solid #9a9c9a;
 	padding: 20px;
-}
+	justify-content: center;
+}/*
 @media screen and (max-width: 1024px){
 	#modal p {
 		font-size: 20px;
-	}
-	#modal {
-		width: 50%;
 	}
 	.surname-name input {
 		font-size: 22px;
@@ -167,4 +183,4 @@ body {
 	#save-info {
 		font-size: 16px;
 	}
-}
+}*/

@@ -8,34 +8,34 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
+	<div class="header">
+		<div class="block">
+			<p id="greeting"></p>
+		</div> 
+	</div>
 	<div id="modal">
-		<form>
+		<div id="modal-content">
 			<div class="surname-name">
 				<div class="surname1">
-					<p>Surname</p>
-					<input type="text" id="surname" name="surname1">
+				<p>Surname</p>
+				<input type="text" id="surname" name="surname1">
 				</div>
-				<div class="name1">
-					<p>Name</p>
-					<input type="text" name="name1">
-				</div>
+			<div class="name1">
+				<p>Name</p>
+				<input type="text" name="name1">
+			</div>
 			</div>
 			<div class="gender">
 				<p>Gender</p>
-				<label><input id="male" type="radio" name="gender" value="male">Male</label>
+				<label><input id="male" type="radio" name="gender" value="male" checked>Male</label>
 				<label><input id="female" type="radio" name="gender" value="female">Female</label>
 			</div>
 			<div class="button-holder">
 				<span id="save-info">Save</span>
 			</div>
-		</form>
+		</div>
 	</div>
 	<div class="container">
-		<div class="header">
-			<div class="block">
-				<p id="greeting"></p>
-			</div> 
-		</div>
 		<div class="data">
 			<div class="form-holder">
 				<div class="info">
@@ -56,9 +56,9 @@
 				
 			</div>
 		</div>
-		<div class="footer">
-			<p>&copy Nona Musaelian</p>
-		</div>
+	</div>
+	<div class="footer">
+		<p>&copy Nona Musaelian</p>
 	</div>
 </body>
 </html>

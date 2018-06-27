@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+* {
+	margin: 0;
+}
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -52,12 +56,12 @@ h1 span {
 	margin: 0 auto;
 	text-align: center;
 	width: 50vw;
-	min-width: 700px;
 }
 h1 {
 	margin: 200px 0;
 	font-size: 86px;
 	color: #ffffff;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 .p-arrow {
@@ -95,45 +99,44 @@ h1 {
 }
 #how-it-works {
 	font-size: 42px;
-	line-height: 24px;
+	line-height: 31px;
+	padding-bottom: 30px;
 	color: rgb(20,150,210);
 	font-weight: 300;
 	text-align: left;
 	text-transform: uppercase;
 }
-.how-it-works .container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-.groups {
-	width: 256px;
-	margin-bottom: 30px;
-}
 .figure {
-	background-image: url(img/sport.jpeg);
-	width: 322px;
+	background-image: url(img/sport.jpeg);	
+	position: relative;
+	width: 100%;
 	height: 240px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	position: relative;
+}
+.figure .dark-block {
+	background-color: rgba(0,0,0,.4);
+	height: 100%;
 }
 .figure .black {
-	width: 260px;
+	width: 60%;
+	padding: 5px;
 	background-color: #353331;
 	position: absolute;
 	bottom: 20px;
 	right: 0;
 	text-align: center;
+	border-top-left-radius: 15em;
+	border-bottom-left-radius: 15em;
 }
 .figure .black p {
 	font-size: 16px;
 	text-transform: uppercase;
-	line-height: 27px;
 	color: rgb(255,255,255);
 	font-family: "Source Sans Pro";
 	text-align: center;
+	margin-bottom: 0rem;
 }
 .text span {
 	font-size: 30px;
@@ -148,11 +151,8 @@ h1 {
 	line-height: 30px;
 }
 .text {
-	box-sizing: border-box;
-	width: 322px;
-	height: 265px;
-	padding: 15px;
-	background-color: rgba(255,255,255,0.2);
+	padding: 10px;
+	height: 60%;
 	border: 1px solid rgba(53,52,50,0.3);
 }
 .why-choose-us {
@@ -218,12 +218,131 @@ ul li>div {
 	font-weight: 300;
 	text-transform: uppercase;
 }
-.our-coaches .container {
+.img.img1 {
+	background-image: url(img/layer-9.png);
+}
+.img.img2 {
+	background-image: url(img/layer-24.png);
+}
+.img.img3 {
+	background-image: url(img/layer-25.png);
+}
+.img.img4 {
+	background-image: url(img/layer-5.png);
+}
+.img.img5 {
+	background-image: url(img/layer-25.png);
+}
+.img.img6 {
+	background-image: url(img/layer-4.png);
+}
+.img.img7 {
+	background-image: url(img/layer-3.png);
+}
+
+.img.img8 {
+	background-image: url(img/layer-6.png);
+}
+.img {
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+	width: 100%;
+	height: 248px;
+}
+.view-profile {
+	opacity: 0;
+	background-color: rgba(0,0,0,.3);
+	padding: 7%;
+	height: 100%;
+}
+.square {
+	background-color: rgba(0,0,0,.3);
+	height: 100%;
+	display: table;
+}
+.square .content {
+	display: table-cell;
+	vertical-align: middle;
+}
+.view-profile h3 {
+	font-size: 32px;
+	line-height: 33px;
+	color: rgb(255,193,0);
+	text-align: center;
+	text-transform: uppercase;
+}
+.line {
+	width: 20%;
+	height: 1px;
+	background-color: #ffc100;
+	margin: 0 auto;
+}
+.img:hover .view-profile {
+	opacity: 1;
+	transition-duration: 0.7s;
+	cursor: pointer;
+}
+button:hover {
+	transition-duration: 0.7s;
+}
+.view-profile button {
+	font-size: 14px;
+	line-height: 33px;
+	font-weight: 300;
+	text-align: center;
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+.what-people-say {
+	background-color: rgba(19,149,209,0.8);
+	padding: 100px 0;
+		color: rgb(255,255,255);
+
+}
+.what-people-say h2 {
+	font-size: 42px;
+	line-height: 29px;
+	color: rgb(255,255,255);
+	font-weight: 300;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+}
+.opinion p {
+	font-size: 16px;
+	font-weight: 300;
+	display: inline;
+
+}
+.opinion h3 {
+	font-size: 24px;
+	font-weight: 300;
+}
+.photo.photo1 {
+	background-image: url(img/curly-hair-girl.jpg);
+}
+.photo.photo2 {
+	background-image: url(img/man-glasses.jpg)	
+}
+.photo {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: cover;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	display: inline-block;
+}
+.part {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-img {
-	width: 350px;
-	height: 550px;
+.fa.fa-quote-left {
+	font-size: 30px;
+	color: rgba(255,255,255,.4);
+	display: inline;
 }

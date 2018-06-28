@@ -335,8 +335,6 @@ button:hover {
 .dark {
 	color: #ffffff;
 	background-color: #312f27;
-	display: flex;
-	justify-content: space-evenly;
 	border-bottom: 7px solid #ffc155;
 }
 .numbers {
@@ -344,8 +342,8 @@ button:hover {
 	padding: 70px 0;
 }
 .num {
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 	border-radius: 50%;
 	border: 3px solid #ffffff;
 	display: table;
@@ -357,10 +355,7 @@ button:hover {
 	font-size: 25px;
 }
 .p {
-	font-size: 20px;
 	text-transform: uppercase;
-	padding-top: 30px;
-	width: 100px;
 }
 .footer {
 	padding: 70px 20px;
@@ -375,6 +370,9 @@ button:hover {
 	margin: 0 auto;
 	font-size: 18px;
 	color: rgba(255,255,255,0.5);
+}
+ul {
+	justify-content: center;
 }
 ul a{
 	display: inline;
